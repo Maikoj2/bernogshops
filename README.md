@@ -42,8 +42,8 @@ Al elegir un  articulo se mostrara las diferentes formas de pagos y envios tenie
 ![diagrama][1]
 
 
-[1]: C:\Users\maiik\Downloads\BernongShop(1).jpeg "diagrama"
 
-![1](C:\Users\maiik\Downloads\BernongShop1.jpeg)
+[1]: BernongShops(1).jpeg "diagrama"
+
  
 
