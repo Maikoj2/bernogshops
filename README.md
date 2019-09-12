@@ -34,4 +34,16 @@ El proyecto está enfocado en crear una página web de una tienda online netamen
 
 se tendran submenus de los diferentes categorias como: accesorios, articulos femeninos ,arcticulos masculinos, las diferentes marcas que se tienen.
 
-Al elegir un  articulo se mostrara las diferentes formas de pagos y envios teniendo la opcion de registro
+Al elegir un  articulo se mostrara las diferentes formas de pagos y envios teniendo la opcion de registro.
+
+
+## Diagrama de flujo de la pagina
+
+![diagrama][1]
+
+
+[1]: C:\Users\maiik\Downloads\BernongShop(1).jpeg "diagrama"
+
+![1](C:\Users\maiik\Downloads\BernongShop1.jpeg)
+ 
+
