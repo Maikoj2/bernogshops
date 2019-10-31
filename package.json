@@ -1,0 +1,40 @@
+{
+  "name": "bernogshops",
+  "version": "1.0.0",
+  "description": "El proyecto está enfocado en crear una página web de una tienda online netamente de producto deportivo, como ropa femenina y masculina, zapatos, gafas, audífono deportivos entre  muchos otros productos. Esta tienda tendrá visible en su inicio muchas marcas de tiendas deportivas con las que se tiene convenio para la venta de estos productos. En el momento de elegir una de estas marcas se mostrará todos los productos que estén a la venta en el momento.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maikoj2/bernogshops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maikoj2/bernogshops/issues"
+  },
+  "homepage": "https://github.com/Maikoj2/bernogshops#readme",
+  "dependencies": {
+    "@hapi/boom": "^8.0.1",
+    "@hapi/joi": "^16.1.7",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.6",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemo": "^1.0.0",
+    "nodemon": "^1.19.4"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
+}
