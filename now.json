@@ -1,12 +1,12 @@
 {
   "name": "bernongshop",
   "version": 2,
-  "builds": [{"src": "index.js", "use": "@now/node-server"}],
+  "builds": [{"src": "server.js", "use": "@now/node-server"}],
   "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
   "env": {
-    "DB_USER": "@db-user",
+    "DB_USER": "@db_user_poli",
     "DB_PASSWORD": "@db-password",
     "DB_HOST": "@db-host",
-    "DB_NAME": "@db-name"
+    "DB_NAME": "@db_shop"
   }
 }
