@@ -2,16 +2,17 @@ const MongoLib = require('../lib/mongo');
 
 class productsService {
   constructor() {
-    this.collection = 'db_shop';
+    this.collection = 'productos';
     this.mongoDB = new MongoLib();
   }
+
   async getproducts({ tags }) {
     const query = tags && { tags: { $in: tags } };
     const product = await this.mongoDB.getAll(this.collection, query);
     return product || [];
   }
 
-  async getproduct({ productId }) {
+  async getproductid({ productId }) {
     const product = await this.mongoDB.get(this.collection, productId);
     return product || {};
   }

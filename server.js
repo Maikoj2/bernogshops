@@ -1,8 +1,13 @@
 const express = require('express');
+const helmet = require('helmet');
 const morgan = require('morgan');
 const app = express();
 const { config }= require("./config/index");
 const productapi =require("./routes/products");
+const user =require("./routes/user");
+const authApi = require('./routes/auth');
+
+
 
 
 const { logErrors, wrapErrors, errorHandler  } = require('./utils/middleware/errorHandlers');
@@ -15,12 +20,18 @@ const cors = require('cors');
 
 //configuracione
 app.set('port',process.env.PORT || 3000);
-productapi(app);
+
 app.use(cors());
 
 //body-parser
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(helmet());
+
+productapi(app);
+user(app);
+//authApi(app);
+
 
 
 // Catch 404
@@ -47,4 +58,8 @@ app.get('/', (req, res) => {
 app.listen(app.get('port'), function (){
     console.log(`nescuchado puerto ${app.get('port')}`);
 });
+
+
+
+
 

@@ -13,20 +13,20 @@ const joi = require('@hapi/joi');
 
 const productIdSchema = joi.string().regex(/^[0-9a-fA-F]{24}$/);
 const productNameSchema = joi.string().max(80);
-const productpriceSchema = joi.number().min(1888).max(2077);
-const productpricesaleSchema = joi.number().min(1888).max(2077);
+const productpriceSchema = joi.number().min(50).max(9999999);
+const productpricesaleSchema = joi.number().min(50).max(9999999);
 const productDescriptionSchema = joi.string().max(300);
-const productmodelSchema = joi.string().regex(/^[0-9a-fA-F]{24}$/);
-const productcategorychema = joi.string().max(5);
-const productourceSchema = joi.string().uri();
-const productTagsSchema =joi.string().max(5);
+const productmodelSchema = joi.string().max(15);
+const productcategorychema = joi.string().max(20);
+const productourceSchema = joi.string();
+const productTagsSchema =joi.string().max(20);
 
 const createproductSchema = {
  
   name: productNameSchema.required(),
   price: productpriceSchema.required(),
   pricesale: productpricesaleSchema.required(),
-  description: productDescriptionSchema.required(),
+  description: productDescriptionSchema.required(), 
   model: productmodelSchema.required(),
   category: productcategorychema.required(),
   source: productourceSchema.required(),
@@ -49,4 +49,4 @@ module.exports = {
   productIdSchema,
   createproductSchema,
   updateproductSchema
-}
+};
