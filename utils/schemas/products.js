@@ -11,39 +11,32 @@ const joi = require('@hapi/joi');
  * /^[0-9a-fA-F]{24}$/: puede tener un tamaño de 24 y así es com debe terminar.
  */
 
-const productIdSchema = joi.string().regex(/^[0-9a-fA-F]{24}$/);
-const productNameSchema = joi.string().max(80);
-const productpriceSchema = joi.number().min(50).max(9999999);
-const productpricesaleSchema = joi.number().min(50).max(9999999);
-const productDescriptionSchema = joi.string().max(300);
-const productmodelSchema = joi.string().max(15);
-const productcategorychema = joi.string().max(20);
-const productourceSchema = joi.string();
-const productTagsSchema =joi.string().max(20);
+const productIdSchema = joi.object().keys({
+  id: joi.string().regex(/^[0-9a-fA-F]{24}$/)
+});
 
-const createproductSchema = {
- 
-  name: productNameSchema.required(),
-  price: productpriceSchema.required(),
-  pricesale: productpricesaleSchema.required(),
-  description: productDescriptionSchema.required(), 
-  model: productmodelSchema.required(),
-  category: productcategorychema.required(),
-  source: productourceSchema.required(),
-  tags: productTagsSchema
-};
+const createproductSchema = joi.object().keys({
+  name:  joi.string().max(80).required(),
+  price:  joi.number().min(50).max(9999999).required(),
+  pricesale:  joi.number().min(50).max(9999999).required(),
+  description:  joi.string().max(300).required(), 
+  model:  joi.string().max(15).required(),
+  category:  joi.string().max(20).required(),
+  source:  joi.string().required(),
+  tags: joi.string().max(20)
+});
 
 // Solo vamos a actualizar una parte de la pelicula
-const updateproductSchema = {
-  name: productNameSchema,
-  price: productpriceSchema,
-  pricesale: productpricesaleSchema,
-  description: productDescriptionSchema,
-  model: productmodelSchema,
-  category: productcategorychema,
-  source: productourceSchema,
-  tags: productTagsSchema
-};
+const updateproductSchema = joi.object().keys({
+  name: joi.string().max(80),
+  price: joi.number().min(50).max(9999999),
+  pricesale: joi.number().min(50).max(9999999),
+  description: joi.string().max(300),
+  model: joi.string().max(15),
+  category: joi.string().max(20),
+  source: joi.string(),
+  tags: joi.string().max(20)
+});
 
 module.exports = {
   productIdSchema,

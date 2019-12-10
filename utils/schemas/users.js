@@ -1,8 +1,10 @@
 const joi = require('@hapi/joi');
 
-const userIdSchema = joi.string().regex(/^[0-9a-fA-F]{24}$/);
+const userIdSchema = joi.object().keys({
+  id: joi.string().regex(/^[0-9a-fA-F]{24}$/)
+});
 
-const userSchema = {
+const userSchema = joi.object().keys({
   name: joi
     .string()
     .max(100)
@@ -12,17 +14,17 @@ const userSchema = {
     .email()
     .required(),
   password: joi.string().required()
-};
+});
 
-const createUserSchema = {
+const createUserSchema = joi.object().keys({
   ...userSchema,
   isAdmin: joi.boolean()
-};
+});
 
-const createProviderUserSchema = {
+const createProviderUserSchema = joi.object().keys({
   ...userSchema,
   apiKeyToken: joi.string().required()
-};
+});
 
 module.exports = {
   userIdSchema,
